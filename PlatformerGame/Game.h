@@ -3,6 +3,9 @@
 #include <time.h>
 #include <stdlib.h>
 
+
+#include "MainMenu.h"
+
 //Author - Seán Whelan
 
 
@@ -12,7 +15,7 @@ public:
 
 	Game();
 	void run();
-
+	MainMenu menu;
 
 protected:
 

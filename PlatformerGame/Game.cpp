@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 //Author - Seán Whelan
-//Date - 13/05/21
-//Student Num - C00250016
+
 
 //updates per milliseconds
 static double const MS_PER_UPDATE = 10.0;
@@ -48,6 +47,8 @@ void Game::run()
 
 		render();
 	}
+
+	//menu.loadAssets();
 }
 
 
@@ -87,13 +88,15 @@ void Game::processGameEvents(sf::Event& event)
 ////////////////////////////////////////////////////////////
 void Game::update(double dt)
 {
-
+	menu.update(dt);
 }
 
 ////////////////////////////////////////////////////////////
 void Game::render()
 {
-	m_window.clear(sf::Color(0, 0, 0, 0));
+	m_window.clear(sf::Color::Blue);
+
+	menu.render(m_window);
 
 	m_window.display();
 }
