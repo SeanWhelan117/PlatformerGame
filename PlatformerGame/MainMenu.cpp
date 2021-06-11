@@ -72,7 +72,7 @@ void MainMenu::update(double dt)
 void MainMenu::render(sf::RenderWindow& t_window)
 {
 	mousePos = sf::Mouse::getPosition(t_window);
-	std::cout << "Mouse x = " << mousePos.x << "Mouse y = "  << mousePos.y << std::endl;
+	//std::cout << "Mouse x = " << mousePos.x << "Mouse y = "  << mousePos.y << std::endl;
 
 	for (int i = 0; i < MAX_BUTTONS; i++)
 	{
@@ -95,12 +95,22 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			buttons[0].setFillColor(sf::Color::Yellow);
 			buttons[0].setScale(1.25, 1.25);
 			m_buttonOneText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Play pressed" << std::endl;
+			}
 		}
 		else if (t_mousePos.y > 440 && t_mousePos.y < 490)
 		{
 			buttons[1].setFillColor(sf::Color::Yellow);
 			buttons[1].setScale(1.25, 1.25);
 			m_buttonTwoText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Instructions pressed" << std::endl;
+			}
 
 		}
 		else if (t_mousePos.y > 560 && t_mousePos.y < 610)
@@ -109,12 +119,22 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			buttons[2].setScale(1.25, 1.25);
 			m_buttonThreeText.setScale(1.25, 1.25);
 
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "Choose stuff pressed" << std::endl;
+			}
+
 		}
 		else if (t_mousePos.y > 680 && t_mousePos.y < 730)
 		{
 			buttons[3].setFillColor(sf::Color::Yellow);
 			buttons[3].setScale(1.25, 1.25);
 			m_buttonFourText.setScale(1.25, 1.25);
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				std::cout << "End Game pressed" << std::endl;
+			}
 
 		}
 		else
