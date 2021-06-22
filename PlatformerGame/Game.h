@@ -5,6 +5,7 @@
 
 
 #include "MainMenu.h"
+#include "GameState.h"
 
 //Author - Seán Whelan
 

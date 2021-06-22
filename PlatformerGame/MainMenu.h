@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML\Graphics.hpp>
+#include "GameState.h"
 
 
 class MainMenu
