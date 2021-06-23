@@ -94,7 +94,15 @@ void Game::update(double dt)
 	{
 		menu.update(dt, m_gameState);
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+	{
+		m_gameState = GameState::mainmenu;
+	}
 
+	if (m_gameState == GameState::gamePlay)
+	{
+
+	}
 
 }
 
@@ -102,6 +110,7 @@ void Game::update(double dt)
 void Game::render()
 {
 	m_window.clear(sf::Color::Blue);
+
 	if (m_gameState == GameState::mainmenu)
 	{
 		menu.render(m_window);
