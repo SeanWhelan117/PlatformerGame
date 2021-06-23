@@ -9,10 +9,10 @@ class MainMenu
 public:
 	MainMenu(); // constructor function
 
-	void update(double dt);
+	void update(double dt, GameState& t_gameState);
 	void render(sf::RenderWindow& t_window);
 
-	void mouseCollision(sf::Vector2i t_mousePos);
+	void mouseCollision(sf::Vector2i t_mousePos, GameState& t_gameState);
 
 	void loadAssets();
 
@@ -21,7 +21,7 @@ private:
 	static const int MAX_BUTTONS = 4;
 	sf::RectangleShape buttons[MAX_BUTTONS];
 
-	int menuState = 1;
+	//int menuState = 1;
 	// 1: intitial showing the whole menu
 	// 2: Start game button 1
 	// 3: instructions button 2

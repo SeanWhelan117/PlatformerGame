@@ -2,6 +2,9 @@
 enum class GameState
 {
 	gamePlay,
-	mainmenu
+	mainmenu,
+	instructions,
+	chooseStuff,
+	endGame
 
 };

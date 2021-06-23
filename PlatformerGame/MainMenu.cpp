@@ -61,11 +61,11 @@ void MainMenu::loadAssets()
 }
 
 
-void MainMenu::update(double dt)
+void MainMenu::update(double dt, GameState& t_gameState)
 {
 	
 	
-	mouseCollision(mousePos);
+	mouseCollision(mousePos, t_gameState);
 
 }
 
@@ -85,7 +85,7 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	t_window.draw(m_buttonFourText);
 }
 
-void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
+void MainMenu::mouseCollision(sf::Vector2i t_mousePos, GameState& t_gameState)
 {
 
 	if (t_mousePos.x < 800 && t_mousePos.x > 600)
@@ -99,6 +99,8 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Play pressed" << std::endl;
+
+				t_gameState = GameState::gamePlay;
 			}
 		}
 		else if (t_mousePos.y > 440 && t_mousePos.y < 490)
@@ -110,7 +112,9 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Instructions pressed" << std::endl;
+				t_gameState = GameState::instructions;
 			}
+
 
 		}
 		else if (t_mousePos.y > 560 && t_mousePos.y < 610)
@@ -122,6 +126,7 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "Choose stuff pressed" << std::endl;
+				t_gameState = GameState::chooseStuff;
 			}
 
 		}
@@ -134,8 +139,8 @@ void MainMenu::mouseCollision(sf::Vector2i t_mousePos)
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				std::cout << "End Game pressed" << std::endl;
+				t_gameState = GameState::endGame;
 			}
-
 		}
 		else
 		{

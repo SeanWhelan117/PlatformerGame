@@ -88,15 +88,44 @@ void Game::processGameEvents(sf::Event& event)
 ////////////////////////////////////////////////////////////
 void Game::update(double dt)
 {
-	menu.update(dt);
+	
+
+	if (m_gameState == GameState::mainmenu)
+	{
+		menu.update(dt, m_gameState);
+	}
+
+
 }
 
 ////////////////////////////////////////////////////////////
 void Game::render()
 {
 	m_window.clear(sf::Color::Blue);
+	if (m_gameState == GameState::mainmenu)
+	{
+		menu.render(m_window);
+	}
 
-	menu.render(m_window);
+	if (m_gameState == GameState::gamePlay)
+	{
+		m_window.clear(sf::Color::Green);
+	}
+
+	if (m_gameState == GameState::instructions)
+	{
+		m_window.clear(sf::Color::Red);
+	}
+
+	if (m_gameState == GameState::chooseStuff)
+	{
+		m_window.clear(sf::Color::Magenta);
+	}
+
+	if (m_gameState == GameState::endGame)
+	{
+		m_window.close();
+	}
 
 	m_window.display();
 }

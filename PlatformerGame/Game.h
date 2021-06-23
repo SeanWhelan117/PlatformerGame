@@ -16,6 +16,7 @@ public:
 
 	Game();
 	void run();
+
 	MainMenu menu;
 
 protected:
@@ -23,6 +24,7 @@ protected:
 	sf::Font m_font;
 	sf::Text m_gameText;
 
+	GameState m_gameState{ GameState::mainmenu };
 
 	void update(double dt);
 	void render();
