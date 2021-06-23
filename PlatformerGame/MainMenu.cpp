@@ -62,9 +62,8 @@ void MainMenu::loadAssets()
 
 
 void MainMenu::update(double dt, GameState& t_gameState)
-{
-	
-	
+{	
+
 	mouseCollision(mousePos, t_gameState);
 
 }
@@ -84,6 +83,8 @@ void MainMenu::render(sf::RenderWindow& t_window)
 	t_window.draw(m_buttonThreeText);
 	t_window.draw(m_buttonFourText);
 }
+
+
 
 void MainMenu::mouseCollision(sf::Vector2i t_mousePos, GameState& t_gameState)
 {

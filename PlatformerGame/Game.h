@@ -6,6 +6,7 @@
 
 #include "MainMenu.h"
 #include "GameState.h"
+#include "Player.h"
 
 //Author - Seán Whelan
 
@@ -18,6 +19,7 @@ public:
 	void run();
 
 	MainMenu menu;
+	Player player;
 
 protected:
 

@@ -12,27 +12,25 @@ public:
 	void update(double dt, GameState& t_gameState);
 	void render(sf::RenderWindow& t_window);
 
-	void mouseCollision(sf::Vector2i t_mousePos, GameState& t_gameState);
+	void mouseCollision(sf::Vector2i t_mousePos, GameState& t_gameState); //checks the mouse location.
+	//if mouse is hovering over a button it shows it
+	//if left click is pressed the button is acted out
 
 	void loadAssets();
 
 private:
 
 	static const int MAX_BUTTONS = 4;
-	sf::RectangleShape buttons[MAX_BUTTONS];
+	sf::RectangleShape buttons[MAX_BUTTONS]; // buttons array for menu buttons
 
-	//int menuState = 1;
-	// 1: intitial showing the whole menu
-	// 2: Start game button 1
-	// 3: instructions button 2
-	// 4:
-	// 5: exit game
-
-	sf::Vector2i mousePos;
+	sf::Vector2i mousePos; // mouses current position
 
 
 	
-	sf::Font m_font;
+	sf::Font m_font; // arial.ttf font
+
+	//text for each button stating what they are
+
 	sf::Text m_buttonOneText;
 	sf::Text m_buttonTwoText;
 	sf::Text m_buttonThreeText;

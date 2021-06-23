@@ -90,18 +90,18 @@ void Game::update(double dt)
 {
 	
 
-	if (m_gameState == GameState::mainmenu)
+	if (m_gameState == GameState::mainmenu) //what happens when the game is currently on the main menu
 	{
 		menu.update(dt, m_gameState);
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)) //return to mainmenu
 	{
 		m_gameState = GameState::mainmenu;
 	}
 
 	if (m_gameState == GameState::gamePlay)
 	{
-
+		player.update(dt);
 	}
 
 }
@@ -118,7 +118,9 @@ void Game::render()
 
 	if (m_gameState == GameState::gamePlay)
 	{
-		m_window.clear(sf::Color::Green);
+		//m_window.clear(sf::Color::Green);
+		player.render(m_window);
+
 	}
 
 	if (m_gameState == GameState::instructions)
