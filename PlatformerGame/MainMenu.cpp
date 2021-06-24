@@ -53,7 +53,7 @@ MainMenu::MainMenu()
 
 void MainMenu::loadAssets()
 {
-	if (!m_font.loadFromFile("arial.ttf"))
+	if (!m_font.loadFromFile("./ASSETS/FONTS/arial.ttf"))
 	{
 		std::cout << "Error loading font..." << std::endl;
 	}
