@@ -11,10 +11,31 @@ public:
 	void render(sf::RenderWindow& t_window);
 	
 	void checkForKeyInput();
+	void checkAnimState();
 
 	void loadAssets();
 
+	
+
+	enum class PlayerAnimState
+	{
+		idleLeft,
+		idleRight,
+		walkingLeft,
+		walkingRight
+	};
+
+	void animatePlayer(PlayerAnimState t_currentAnimState);
+
+
 private:
+
+	float totalElapsed = 0; //animation based variables
+	int animationframe = 0;
+	sf::IntRect rectSourceSprite;
+
+	PlayerAnimState currentAnimState{ PlayerAnimState::idleRight };
+
 
 	//sf::CircleShape m_player;
 
@@ -36,6 +57,7 @@ private:
 	//Attacking Textures
 	//
 
+	bool moving = false;
 
 
 };
